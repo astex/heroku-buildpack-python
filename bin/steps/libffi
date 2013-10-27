@@ -23,8 +23,10 @@ if (grep -Eiq "^\s*cffi" requirements.txt) then
 
     export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:$(pwd)/lib/pkgconfig/
     echo "PKG_CONFIG_PATH=${PKG_CONFIG_PATH}"
-    if [ -e $(pwd)/lib/pkgconfig/libffi.pc ] then
+    if [ -e $(pwd)/lib/pkgconfig/libffi.pc ]
+    then
         echo "libffi.pc is in-place at $(pwd)/vendor/lib/pkgconfig/libffi.pc, libffi-based builds should work!"
+    fi
 
     cd "$PREV_DIR"
 fi
